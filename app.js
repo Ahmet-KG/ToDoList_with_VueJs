@@ -10,8 +10,10 @@ const App = {
       this.inputValue = event.target.value;
     },
     addNewNotes() {
-      this.notes.push(this.inputValue);
-      this.inputValue = "";
+      if (this.inputValue !== "") {
+        this.notes.push(this.inputValue);
+        this.inputValue = "";
+      }
     },
   },
 };

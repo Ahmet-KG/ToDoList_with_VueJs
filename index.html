@@ -4,24 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css/theme.css">
+    <link rel="stylesheet" href="style.css/theme.css" />
     <title>To Do List</title>
   </head>
   <body>
     <div class="container" id="app">
-        <div class="card">
-            <h1>To Do List</h1>
-            <div class="form-control">
-                <input type="text" placeholder="Enter your to do list" :value="inputValue" @input="valueHandler"/>
-            </div>
-            <button class="btn" @click="addNewNotes">Add</button>
-            <hr />
-            <ul class="list">
-                <li class="list-item" v-for="note in notes"> {{ note }} </li>
-            </ul>
+      <div class="card">
+        <h1>To Do List</h1>
+        <div class="form-control">
+          <input
+            type="text"
+            :value="inputValue"
+            @input="valueHandler"
+            @keypress.enter="addNewNotes"
+            placeholder="Enter your to do list"
+          />
         </div>
+        <button class="btn" @click="addNewNotes">Add</button>
+        <hr />
+        <ul class="list">
+          <li class="list-item" v-for="note in notes">{{ note }}</li>
+        </ul>
+      </div>
     </div>
-
 
     <script src="https://unpkg.com/vue@next"></script>
     <script src="app.js"></script>
