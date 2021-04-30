@@ -2,7 +2,7 @@ const App = {
   data() {
     return {
       inputValue: "",
-      notes: ["yapilacaklar1", "yapilacaklar2"],
+      notes: ["reading", "shopping"],
     };
   },
   methods: {
@@ -14,6 +14,9 @@ const App = {
         this.notes.push(this.inputValue);
         this.inputValue = "";
       }
+    },
+    deleteNotes(index) {
+      this.notes.splice(index, 1);
     },
   },
 };

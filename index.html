@@ -22,9 +22,13 @@
         </div>
         <button class="btn" @click="addNewNotes">Add</button>
         <hr />
-        <ul class="list">
-          <li class="list-item" v-for="note in notes">{{ note }}</li>
+        <ul class="list" v-if="notes.length !== 0">
+          <li class="list-item" v-for="(note, index) in notes">
+            {{index + 1}}) {{note }}
+            <button class="btn danger" @click="deleteNotes(index)">delete</button>
+          </li>
         </ul>
+        <div v-else="notes.length === 0">There ara no todos to view. Add a new one.</div>
       </div>
     </div>
 
