@@ -14,8 +14,7 @@
         <div class="form-control">
           <input
             type="text"
-            :value="inputValue"
-            @input="valueHandler"
+            v-model="inputValue"
             @keypress.enter="addNewNotes"
             placeholder="Enter your to do list"
           />

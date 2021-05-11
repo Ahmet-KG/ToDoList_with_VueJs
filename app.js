@@ -6,9 +6,6 @@ const App = {
     };
   },
   methods: {
-    valueHandler(event) {
-      this.inputValue = event.target.value;
-    },
     addNewNotes() {
       if (this.inputValue !== "") {
         this.notes.push(this.inputValue);
